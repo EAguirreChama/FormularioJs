@@ -1,4 +1,4 @@
-document.getElementById('formulario').addEventListener('submit'), (event) => {
+document.getElementById('formulario').addEventListener('submit', (event) => {
     // Prevenir la acción que viene por defecto
     event.preventDefault()
 
@@ -40,4 +40,8 @@ document.getElementById('formulario').addEventListener('submit'), (event) => {
     }
 
     // Si todos los campos son válidos enviar formulario
-}
+    if (!errorNombre.textContent && !emailError.textContent && !contraseñaError) {
+        alert('El formulario se ha enviado con éxito')
+        document.getElementById('formulario').reset()
+    }
+})
