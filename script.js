@@ -31,7 +31,7 @@ document.getElementById('formulario').addEventListener('submit', (event) => {
     let contraseñaEntrada = document.getElementById('password')
     let contraseñaError = document.getElementById('passwordError')
 
-    if (contraseñaEntrada.value.legth < 8) {
+    if (contraseñaEntrada.value.length < 8) {
         contraseñaError.textContent = 'La contraseña debe tener 8 caracteres'
         contraseñaError.classList.add('error-messge')
     } else {
@@ -40,7 +40,7 @@ document.getElementById('formulario').addEventListener('submit', (event) => {
     }
 
     // Si todos los campos son válidos enviar formulario
-    if (!errorNombre.textContent && !emailError.textContent && !contraseñaError) {
+    if (!errorNombre.textContent && !emailError.textContent && !contraseñaError.textContent) {
         alert('El formulario se ha enviado con éxito')
         document.getElementById('formulario').reset()
     }
